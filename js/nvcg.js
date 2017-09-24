@@ -78,7 +78,9 @@ function chooseAppearance() {
 
   appearance["male"] = r.bool();
   if (appearance["male"]) {
-    appearance["facialHair"] = r.pick(facialHairStyle);
+    if (!rolledNone(facialHairStyle)) {
+      appearance["facialHair"] = r.pick(facialHairStyle);
+    }
   }
 
   return appearance;

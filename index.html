@@ -169,9 +169,11 @@
     let appearance = chooseAppearance();
     if (appearance.male) {
       $('#gender').text("Male");
-      $('#appearance').append(
-        '<div class="column has-text-centered"><p class="heading">Facial Hair</p><p class="title">' +
-        appearance.facialHair + '</p></div>');
+      if (appearance.hasOwnProperty('facialHair')) {
+        $('#appearance').append(
+          '<div class="column has-text-centered"><p class="heading">Facial Hair</p><p class="title">' +
+          appearance.facialHair + '</p></div>');
+      }
     } else {
       $('#gender').text("Female");
     }
