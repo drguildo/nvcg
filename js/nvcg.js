@@ -111,53 +111,29 @@ function chooseFaction() {
 
 function choosePrimaryWeaponType() {
   let weaponTypes = ["Pistols", "Rifles", "SMGs", "Shotguns", "Heavy weapons",
-    "Energy pistols",
-    "Energy rifles", "Energy heavy weapons", "Explosive projectile",
-    "Explosive thrown",
-    "Explosive placed", "Melee bladed", "Melee blunt", "Melee thrown",
-    "Melee unarmed"
+    "Energy pistols", "Energy rifles", "Energy heavy weapons",
+    "Explosive projectile", "Explosive thrown", "Explosive placed",
+    "Melee bladed", "Melee blunt", "Melee thrown", "Melee unarmed"
   ];
 
   return r.pick(weaponTypes);
 }
 
 function chooseTraits() {
-  let traits = ["Built to Destroy",
-    "Claustrophobia",
-    "Early Bird",
-    "Fast Shot",
-    "Four Eyes",
-    "Good Natured",
-    "Heavy Handed",
-    "Hoarder",
-    "Hot Blooded",
-    "Kamikaze",
-    "Logan's Loophole",
-    "Loose Cannon",
-    "Skilled",
-    "Small Frame",
-    "Trigger Discipline",
-    "Wild Wasteland"
-  ]
+  let traits = ["Built to Destroy", "Claustrophobia", "Early Bird", "Fast Shot",
+    "Four Eyes", "Good Natured", "Heavy Handed", "Hoarder", "Hot Blooded",
+    "Kamikaze", "Logan's Loophole", "Loose Cannon", "Skilled", "Small Frame",
+    "Trigger Discipline", "Wild Wasteland"
+  ];
 
   return r.sample(traits, r.integer(0, 2));
 }
 
 function chooseTagSkills() {
-  let skills = ["Barter",
-    "Energy Weapons",
-    "Explosives",
-    "Guns",
-    "Lockpick",
-    "Medicine",
-    "Melee Weapons",
-    "Repair",
-    "Science",
-    "Sneak",
-    "Speech",
-    "Survival",
-    "Unarmed"
-  ]
+  let skills = ["Barter", "Energy Weapons", "Explosives", "Guns", "Lockpick",
+    "Medicine", "Melee Weapons", "Repair", "Science", "Sneak", "Speech",
+    "Survival", "Unarmed"
+  ];
 
   return r.sample(skills, 3);
 }
@@ -171,7 +147,7 @@ function chooseSpecial() {
     "luck": 1,
     "perception": 1,
     "strength": 1
-  }
+  };
 
   let SPECIALPointsRemaining = 33;
   while (SPECIALPointsRemaining > 0) {
