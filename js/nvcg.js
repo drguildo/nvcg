@@ -161,3 +161,18 @@ function chooseSpecial() {
 
   return SPECIAL;
 }
+
+
+/**
+ * Returns `true` with a probability of 1 / (N + 1) where N is the
+ * number of elements in the provided list.
+ *
+ * The idea is that there's an equal probability of selecting the
+ * equivalent of "no value" from a set of values, for instances where
+ * this is a possibility (e.g. the lack of facial hair in character
+ * appearance).
+ *
+ */
+function rolledNone(list) {
+  return r.bool(1 / (list.length + 1));
+}
