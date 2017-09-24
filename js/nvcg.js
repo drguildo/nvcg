@@ -81,8 +81,6 @@ function chooseAppearance() {
     appearance["facialHair"] = r.pick(facialHairStyle);
   }
 
-  console.log(appearance);
-
   return appearance;
 }
 
