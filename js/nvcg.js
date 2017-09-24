@@ -1,86 +1,89 @@
-/*
-Male / Female
-
-African American / Asian / Caucasian / Hispanic
-
-Hair Style
-----------
-Clean Cut
-Tunnel Snake
-Pompadour
-Sarge
-Waster
-Balding
-Buzz Saw
-Combover
-Smooth Wave
-Buzz Cut
-Shaggy Suave
-Terrorsaur
-Punked
-Warhawk
-The Unsettler
-Blast Back
-Bedraggled
-High Riser
-
-Facial Hair
------------
-Survivalist
-Rough Beard
-Goatee
-Beatnick
-Gunslinger
-The Gentleman
-Muttonstache
-Shaggy Sideburns
-Soul Patch
-Old Coot
-The Gettysburg
-Chopper
-Chin Strip
-Honest Abe
-Man's Man
-Swashbuckler
-Lady's Man
-Tough Guy
-Machievellian
-Chin Dusting
-Cavalry
-Daddy O
-Male Eyebrows
-Female Eyebrows
-Backwater
-Roughneck
-Thin Strip
-Shag Strip
-Touch O' Soul
-Tire Track
-The Comrade
-Chin Scruff
-Manchurian
-Doom Rider
-Mephistopholes
-Bristly Cool
-El Carcinero
-Hombre
-Renegade
-Gruff Stuff
-Dead Man's Hand
-Bar Brawler
-Stranded
-Dashing Rogue
-Slickster
-Chairman Cheng
-Ronin
-Grizzled Samurai
-Serious Chic
-*/
-
 let r = new Random();
 
-function chooseGender() {
-  return r.pick(["Male", "Female"]);
+function chooseAppearance() {
+  const races = ["African American", "Asian", "Caucasian", "Hispanic"];
+  const hairstyles = ["Clean Cut",
+    "Tunnel Snake",
+    "Pompadour",
+    "Sarge",
+    "Waster",
+    "Balding",
+    "Buzz Saw",
+    "Combover",
+    "Smooth Wave",
+    "Buzz Cut",
+    "Shaggy Suave",
+    "Terrorsaur",
+    "Punked",
+    "Warhawk",
+    "The Unsettler",
+    "Blast Back",
+    "Bedraggled",
+    "High Riser"
+  ];
+  let facialHairStyle = ["Survivalist",
+    "Rough Beard",
+    "Goatee",
+    "Beatnick",
+    "Gunslinger",
+    "The Gentleman",
+    "Muttonstache",
+    "Shaggy Sideburns",
+    "Soul Patch",
+    "Old Coot",
+    "The Gettysburg",
+    "Chopper",
+    "Chin Strip",
+    "Honest Abe",
+    "Man's Man",
+    "Swashbuckler",
+    "Lady's Man",
+    "Tough Guy",
+    "Machievellian",
+    "Chin Dusting",
+    "Cavalry",
+    "Daddy O",
+    "Male Eyebrows",
+    "Female Eyebrows",
+    "Backwater",
+    "Roughneck",
+    "Thin Strip",
+    "Shag Strip",
+    "Touch O' Soul",
+    "Tire Track",
+    "The Comrade",
+    "Chin Scruff",
+    "Manchurian",
+    "Doom Rider",
+    "Mephistopholes",
+    "Bristly Cool",
+    "El Carcinero",
+    "Hombre",
+    "Renegade",
+    "Gruff Stuff",
+    "Dead Man's Hand",
+    "Bar Brawler",
+    "Stranded",
+    "Dashing Rogue",
+    "Slickster",
+    "Chairman Cheng",
+    "Ronin",
+    "Grizzled Samurai",
+    "Serious Chic"
+  ];
+
+  let appearance = {};
+  appearance["race"] = r.pick(races);
+  appearance["hairstyle"] = r.pick(hairstyles);
+
+  appearance["male"] = r.bool();
+  if (appearance["male"]) {
+    appearance["facialHair"] = r.pick(facialHairStyle);
+  }
+
+  console.log(appearance);
+
+  return appearance;
 }
 
 function chooseCompanions() {

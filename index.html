@@ -20,6 +20,24 @@
 
   <section class="section">
     <div class="container">
+      <h1 class="title">Appearance</h1>
+      <h2 class="subtitle">
+        How your character looks.
+      </h2>
+      <div class="columns" id="appearance">
+        <div class="column has-text-centered">
+          <p class="heading">Gender</p>
+          <p class="title" id="gender"></p>
+        </div>
+        <div class="column has-text-centered">
+          <p class="heading">Hairstyle</p>
+          <p class="title" id="hairstyle"></p>
+        </div>
+      </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
       <h1 class="title">S.P.E.C.I.A.L.</h1>
       <h2 class="subtitle">
         SPECIAL is the ruleset that powers all Fallout games. The name "SPECIAL" is an acronym
@@ -147,6 +165,17 @@
     $('#special-intelligence').text(special['intelligence']);
     $('#special-agility').text(special['agility']);
     $('#special-luck').text(special['luck']);
+
+    let appearance = chooseAppearance();
+    if (appearance.male) {
+      $('#gender').text("Male");
+      $('#appearance').append(
+        '<div class="column has-text-centered"><p class="heading">Facial Hair</p><p class="title">' +
+        appearance.facialHair + '</p></div>');
+    } else {
+      $('#gender').text("Female");
+    }
+    $('#hairstyle').text(appearance.hairstyle);
 
     $('#tag-skills').append(buildListElement(chooseTagSkills()));
 
