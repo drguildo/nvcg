@@ -93,11 +93,11 @@ function chooseCompanions() {
   let secondaryCompanions = ["ED-E", "Rex"];
   let companions = [];
 
-  if (r.bool(mainCompanions.length / (mainCompanions.length + 1))) {
+  if (!rolledNone(mainCompanions)) {
     companions.push(r.pick(mainCompanions));
   }
 
-  if (r.bool(secondaryCompanions.length / (secondaryCompanions.length + 1))) {
+  if (!rolledNone(secondaryCompanions)) {
     companions.push(r.pick(secondaryCompanions));
   }
 
