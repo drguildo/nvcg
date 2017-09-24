@@ -22,72 +22,72 @@
     <div class="container">
       <h1 class="title">S.P.E.C.I.A.L.</h1>
       <h2 class="subtitle">
-        A simple container to divide your page into <strong>sections</strong>, like
-        the one you're currently reading
+        SPECIAL is the ruleset that powers all Fallout games. The name "SPECIAL" is an acronym
+        standing for the primary statistics in the system: <strong>S</strong>trength,
+        <strong>P</strong>erception, <strong>E</strong>ndurance, <strong>C</strong>harisma,
+        <strong>I</strong>ntelligence, <strong>A</strong>gility and <strong>L</strong>uck.
       </h2>
 
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Level</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Strength</th>
-            <td id="special-strength">1</td>
-          </tr>
-          <tr>
-            <th>Perception</th>
-            <td id="special-perception">1</td>
-          </tr>
-          <tr>
-            <th>Endurance</th>
-            <td id="special-endurance">1</td>
-          </tr>
-          <tr>
-            <th>Charisma</th>
-            <td id="special-charisma">1</td>
-          </tr>
-          <tr>
-            <th>Intelligence</th>
-            <td id="special-intelligence">1</td>
-          </tr>
-          <tr>
-            <th>Agility</th>
-            <td id="special-agility">1</td>
-          </tr>
-          <tr>
-            <th>Luck</th>
-            <td id="special-luck">1</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Tagged Skills</h1>
-      <h2 class="subtitle">
-        A simple container to divide your page into <strong>sections</strong>, like
-        the one you're currently reading
-      </h2>
-      <div class="content">
-        <ul id="tagged-skills"></ul>
+      <div class="columns">
+        <div class="column has-text-centered">
+          <p class="heading">Strength</p>
+          <p class="title" id="special-strength">1</p>
+        </div>
+        <div class="column has-text-centered">
+          <p class="heading">Perception</p>
+          <p class="title" id="special-perception">1</p>
+        </div>
+        <div class="column has-text-centered">
+          <p class="heading">Endurance</p>
+          <p class="title" id="special-endurance">1</p>
+        </div>
+        <div class="column has-text-centered">
+          <p class="heading">Charisma</p>
+          <p class="title" id="special-charisma">1</p>
+        </div>
+        <div class="column has-text-centered">
+          <p class="heading">Intelligence</p>
+          <p class="title" id="special-intelligence">1</p>
+        </div>
+        <div class="column has-text-centered">
+          <p class="heading">Agility</p>
+          <p class="title" id="special-agility">1</p>
+        </div>
+        <div class="column has-text-centered">
+          <p class="heading">Luck</p>
+          <p class="title" id="special-luck">1</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container" id="tag-skills">
+      <h1 class="title">Tag Skills</h1>
+      <h2 class="subtitle">
+        Tag skills are the player character's specializations. At the start of the game,
+        the player chooses three Tag skills which will be their character's specialties
+        throughout the game.
+      </h2>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" id="traits">
       <h1 class="title">Traits</h1>
       <h2 class="subtitle">
-        A simple container to divide your page into <strong>sections</strong>, like
-        the one you're currently reading
+        Traits are optional character modifications that affect the player character.
       </h2>
-      <div class="content" id="traits"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" id="companions">
+      <h1 class="title">Companions</h1>
+      <h2 class="subtitle">
+        Companions are the allies of player characters who accompany and aid them during
+        their adventures.
+      </h2>
     </div>
   </section>
 
@@ -95,29 +95,50 @@
     <div class="container">
       <h1 class="title">Faction</h1>
       <h2 class="subtitle">
-        A simple container to divide your page into <strong>sections</strong>, like
-        the one you're currently reading
+        The major factions the player can choose to align themselves with.
       </h2>
-      <p class="is-size-2 has-text-centered" id="faction"></p>
+      <div class="columns">
+        <div class="column has-text-centered">
+          <p class="title" id="faction"></p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section">
+  <footer class="footer">
     <div class="container">
-      <h1 class="title">Companions</h1>
-      <h2 class="subtitle">
-        A simple container to divide your page into <strong>sections</strong>, like
-        the one you're currently reading
-      </h2>
-      <div class="content" id="companions"></div>
+      <div class="content has-text-centered">
+        <p>
+          Created by <a href="https://sjm.io">Simon Morgan</a>.
+        </p>
+        <p>
+          The website uses content from
+          <a href="http://fallout.wikia.com/">Nukapedia</a> and is licensed under
+          the <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+        </p>
+      </div>
     </div>
-  </section>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/random-js/1.0.8/random.min.js"></script>
   <script src="js/nvcg.js"></script>
   <script>
+    function buildListElement(list) {
+      let element = $('<div class="columns"></div>');
+      if (list.length === 0) {
+        element.append(
+          '<div class="column has-text-centered"><p class="title">None</p></div>'
+        );
+        return element;
+      }
+      list.forEach(item => element.append(
+        '<div class="column has-text-centered"><p class="title">' + item +
+        '</p></div>'));
+      return element;
+    }
+
     let special = chooseSpecial();
     $('#special-strength').text(special['strength']);
     $('#special-perception').text(special['perception']);
@@ -127,37 +148,13 @@
     $('#special-agility').text(special['agility']);
     $('#special-luck').text(special['luck']);
 
-    let taggedSkills = chooseTaggedSkills();
-    taggedSkills.forEach(skill => $('#tagged-skills').append('<li>' + skill +
-      '</li>'));
+    $('#tag-skills').append(buildListElement(chooseTagSkills()));
 
-    let traits = chooseTraits();
-    if (traits.length > 0) {
-      let list = $('<ul></ul>');
-      traits.forEach(trait => list.append('<li>' + trait + '</li>'));
-      $('#traits').append(list);
-    } else {
-      $('#traits').append('<p>None</p>');
-    }
+    $('#traits').append(buildListElement(chooseTraits()));
+
+    $('#companions').append(buildListElement(chooseCompanions()));
 
     $('#faction').text(chooseFaction());
-
-    let mainCompanion = chooseCompanion();
-    let otherCompanion = chooseOtherCompanion();
-    let companions = [];
-    if (mainCompanion !== "None") {
-      companions.push(mainCompanion);
-    }
-    if (otherCompanion !== "None") {
-      companions.push(otherCompanion);
-    }
-    if (companions.length > 0) {
-      let list = $('<ul></ul>');
-      companions.forEach(companion => list.append('<li>' + companion + '</li>'));
-      $('#companions').append(list);
-    } else {
-      $('#companions').append('<p>None</p>');
-    }
   </script>
 </body>
 

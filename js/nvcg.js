@@ -1,21 +1,109 @@
+/*
+Male / Female
+
+African American / Asian / Caucasian / Hispanic
+
+Hair Style
+----------
+Clean Cut
+Tunnel Snake
+Pompadour
+Sarge
+Waster
+Balding
+Buzz Saw
+Combover
+Smooth Wave
+Buzz Cut
+Shaggy Suave
+Terrorsaur
+Punked
+Warhawk
+The Unsettler
+Blast Back
+Bedraggled
+High Riser
+
+Facial Hair
+-----------
+Survivalist
+Rough Beard
+Goatee
+Beatnick
+Gunslinger
+The Gentleman
+Muttonstache
+Shaggy Sideburns
+Soul Patch
+Old Coot
+The Gettysburg
+Chopper
+Chin Strip
+Honest Abe
+Man's Man
+Swashbuckler
+Lady's Man
+Tough Guy
+Machievellian
+Chin Dusting
+Cavalry
+Daddy O
+Male Eyebrows
+Female Eyebrows
+Backwater
+Roughneck
+Thin Strip
+Shag Strip
+Touch O' Soul
+Tire Track
+The Comrade
+Chin Scruff
+Manchurian
+Doom Rider
+Mephistopholes
+Bristly Cool
+El Carcinero
+Hombre
+Renegade
+Gruff Stuff
+Dead Man's Hand
+Bar Brawler
+Stranded
+Dashing Rogue
+Slickster
+Chairman Cheng
+Ronin
+Grizzled Samurai
+Serious Chic
+*/
+
 let r = new Random();
 
-function chooseOtherCompanion() {
-  let companions = ["ED-E", "Rex", "None"];
-  return r.pick(companions);
+function chooseGender() {
+  return r.pick(["Male", "Female"]);
 }
 
-function chooseCompanion() {
-  let companions = ["Arcade Israel Gannon", "Craig Boone", "Lily Bowen",
-    "Raul Tejada",
-    "Rose of Sharon Cassidy", "Veronica Santangelo", "None"
+function chooseCompanions() {
+  let mainCompanions = ["Arcade Israel Gannon", "Craig Boone", "Lily Bowen",
+    "Raul Tejada", "Rose of Sharon Cassidy", "Veronica Santangelo"
   ];
-  return r.pick(companions);
+  let secondaryCompanions = ["ED-E", "Rex"];
+  let companions = [];
+
+  if (r.bool(mainCompanions.length / (mainCompanions.length + 1))) {
+    companions.push(r.pick(mainCompanions));
+  }
+
+  if (r.bool(secondaryCompanions.length / (secondaryCompanions.length + 1))) {
+    companions.push(r.pick(secondaryCompanions));
+  }
+
+  return companions;
 }
 
 function chooseFaction() {
   let factions = ["New California Republic", "Caesar's Legion", "Robert House",
-    "Yes Man"
+    "Yes Man (Independent)"
   ];
   return r.pick(factions);
 }
@@ -54,7 +142,7 @@ function chooseTraits() {
   return r.sample(traits, r.integer(0, 2));
 }
 
-function chooseTaggedSkills() {
+function chooseTagSkills() {
   let skills = ["Barter",
     "Energy Weapons",
     "Explosives",
