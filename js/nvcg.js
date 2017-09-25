@@ -2,11 +2,21 @@ let r = new Random();
 
 function chooseAppearance() {
   const races = ["African American", "Asian", "Caucasian", "Hispanic"];
-  const hairstyles = ["Clean Cut", "Tunnel Snake", "Pompadour", "Sarge",
-    "Waster", "Balding", "Buzz Saw", "Combover", "Smooth Wave", "Buzz Cut",
-    "Shaggy Suave", "Terrorsaur", "Punked", "Warhawk", "The Unsettler",
-    "Blast Back", "Bedraggled", "High Riser"
+
+  const unisexHairstylels = ["Sarge", "Clean Cut", "Buzz Cut", "Bedraggled",
+    "Blast Back"
   ];
+  const maleHairstyles = ["Tunnel Snake", "Pompadour", "Waster", "Balding",
+    "Buzz Saw", "Combover", "Smooth Wave", "Shaggy Suave", "Terrorsaur",
+    "Punked", "Warhawk", "The Unsettler", "High Riser"
+  ];
+  const femaleHairstyles = ["Domestic Goddess", "No Nonsense", "Prim 'N Proper",
+    "Rought Nite", "Wendy the Welder", "The Sophisticate", "Frazzled",
+    "Iron Maiden", "Unladylike", "Rude Ridge", "Mangy", "Fallen Angel",
+    "FairyTails", "Shaved", "L'il Devil", "Seductress", "The Unsettler",
+    "Pretty Puff"
+  ];
+
   let facialHairStyle = ["Survivalist", "Rough Beard", "Goatee", "Beatnick",
     "Gunslinger", "The Gentleman", "Muttonstache", "Shaggy Sideburns",
     "Soul Patch", "Old Coot", "The Gettysburg", "Chopper", "Chin Strip",
@@ -22,14 +32,16 @@ function chooseAppearance() {
 
   let appearance = {};
   appearance["race"] = r.pick(races);
-  appearance["hairstyle"] = r.pick(hairstyles);
 
   appearance["male"] = r.bool();
   if (appearance["male"]) {
+    appearance["hairstyle"] = r.pick(unisexHairstylels.concat(maleHairstyles));
     if (!rolledNone(facialHairStyle)) {
       appearance["facialHair"] = r.pick(facialHairStyle);
     }
   }
+
+  appearance["hairstyle"] = r.pick(unisexHairstylels.concat(femaleHairstyles));
 
   return appearance;
 }
