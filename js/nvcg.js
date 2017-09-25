@@ -11,7 +11,7 @@ function chooseAppearance() {
     "Punked", "Warhawk", "The Unsettler", "High Riser"
   ];
   const femaleHairstyles = ["Domestic Goddess", "No Nonsense", "Prim 'N Proper",
-    "Rought Nite", "Wendy the Welder", "The Sophisticate", "Frazzled",
+    "Rough Nite", "Wendy the Welder", "The Sophisticate", "Frazzled",
     "Iron Maiden", "Unladylike", "Rude Ridge", "Mangy", "Fallen Angel",
     "FairyTails", "Shaved", "L'il Devil", "Seductress", "The Unsettler",
     "Pretty Puff"
