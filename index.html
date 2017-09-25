@@ -30,6 +30,10 @@
           <p class="title" id="gender"></p>
         </div>
         <div class="column has-text-centered">
+          <p class="heading">Hair Colour</p>
+          <span class="tag is-large" id="hair-colour"></span>
+        </div>
+        <div class="column has-text-centered">
           <p class="heading">Hairstyle</p>
           <p class="title" id="hairstyle"></p>
         </div>
@@ -141,6 +145,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/random-js/1.0.8/random.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Colors.js/1.2.3/colors.min.js"></script>
   <script src="js/nvcg.js"></script>
   <script>
     function buildListElement(list) {
@@ -178,6 +183,10 @@
       $('#gender').text("Female");
     }
     $('#hairstyle').text(appearance.hairstyle);
+    let hairColour = $c.rand();
+    $('#hair-colour').text($c.hex2rgb(hairColour).RGB);
+    $('#hair-colour').css("color", $c.complement(hairColour));
+    $('#hair-colour').css("background-color", hairColour);
 
     $('#tag-skills').append(buildListElement(chooseTagSkills()));
 
