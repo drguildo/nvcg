@@ -39,9 +39,9 @@ function chooseAppearance() {
     if (!rolledNone(facialHairStyle)) {
       appearance["facialHair"] = r.pick(facialHairStyle);
     }
+  } else {
+    appearance["hairstyle"] = r.pick(unisexHairstylels.concat(femaleHairstyles));
   }
-
-  appearance["hairstyle"] = r.pick(unisexHairstylels.concat(femaleHairstyles));
 
   return appearance;
 }
